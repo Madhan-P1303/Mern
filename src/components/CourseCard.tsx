@@ -73,10 +73,12 @@ const CourseCard = ({
             <Clock className="h-4 w-4 mr-1" />
             {duration} hours
           </div>
-          <div className="flex items-center">
-            <Users className="h-4 w-4 mr-1" />
-            {studentsEnrolled.toLocaleString()}
-          </div>
+            <div className="flex items-center">
+              <Users className="h-4 w-4 mr-1" />
+              {typeof studentsEnrolled === "number" && !isNaN(studentsEnrolled)
+                ? studentsEnrolled.toLocaleString()
+                : "N/A"}
+            </div>
         </div>
 
         <div className="flex items-center justify-between">
